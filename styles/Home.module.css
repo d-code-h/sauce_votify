@@ -5,6 +5,17 @@
 .main {
   background-position: center;
   background-size: cover;
+  position: relative;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
 }
 
 .access {
@@ -12,25 +23,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    to left bottom,
-    rgb(255, 0, 0),
-    yellow,
-    rgb(0, 255, 0),
-    rgb(0, 255, 255),
-    rgb(0, 0, 255),
-    rgb(255, 0, 255),
-    rgb(255, 0, 0)
-  );
+  background-image: url('../public/program.jpg');
+  background-position: center;
 }
 
 .content {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 10;
   width: 90%;
   height: 100%;
   text-align: center;
   padding: 2rem;
   border-radius: 1rem;
+}
+.content_hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content_hero_img {
+  align-self: baseline;
 }
 .heading {
   font-size: 4rem;
