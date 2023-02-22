@@ -8,11 +8,14 @@ export default async function Candidates(req, res) {
   if (req.method === 'POST') {
     const data = req.body;
     data['vote'] = 0;
-    const { fname, lname, nick, matric, level, position, img } = data;
+    const { fname, lname, nick, matric, faculty, position, img } = data;
 
     // Pattern
     const string = /^[a-zA-Z]+$/;
-    const matricPattern = /^[0-9]{4}\/(1|2)\/[0-9]{5}(AR|AE)$/;
+
+    const matricPattern =
+      /^(2014|2015|2016|2017|2018)\/(1|2)\/[0-9]{5}[A-Z]{2}$/;
+
     const numPat = /^[0-9]{3}$/;
 
     if (
@@ -25,11 +28,11 @@ export default async function Candidates(req, res) {
       return res.status(400).json({ message: 'All fields are required' });
     } else if (!matricPattern.test(matric)) {
       // Return error
-      return res.status(400).json({ message: 'Invalid matric number' });
+      return res.status(400).json({
+        message: 'Invalid matric number! You are not a 500L Student.',
+      });
     } else {
       (async () => {
-        console.log('Na her!de');
-
         try {
           await client.connect();
           const db = client.db(dbName);
@@ -49,6 +52,8 @@ export default async function Candidates(req, res) {
           return res.status(400).json({
             message: 'Server trying to rest, Please try again soon.',
           });
+        } finally {
+          db.close();
         }
       })();
     }

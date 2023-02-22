@@ -17,7 +17,7 @@ export default function Candidates() {
   const [lname, setlname] = useState('');
   const [nick, setnick] = useState('');
   const [matric, setmatric] = useState('');
-  const [level, setlevel] = useState('');
+  const [faculty, setfaculty] = useState('');
   const [position, setposition] = useState('');
   // const [active, setactive] = useState(false);
   const [error, setError] = useState('');
@@ -28,6 +28,7 @@ export default function Candidates() {
   const [ln, setln] = useState(false);
   const [nn, setnn] = useState(false);
   const [mt, setmt] = useState(false);
+  const [submit, setsubmit] = useState(false);
   const handleEvent = (i) => {
     `set${i}`(true);
   };
@@ -47,22 +48,28 @@ export default function Candidates() {
     data['lname'] = lname.trim();
     data['nick'] = nick.trim();
     data['matric'] = matric.trim().toUpperCase();
-    data['level'] = level.trim();
+    data['faculty'] = faculty.trim();
     data['position'] = position.trim();
     data['img'] = img;
     if (
       (data.fname === '' ||
         data.lname === '' ||
         data.nick === '' ||
-        data.level === '' ||
+        data.faculty === '' ||
         data.position === '',
       data.matric === '')
     ) {
       setError('All fields are required');
-      // } else if (data.matric.length !== 15) {
-      //   setError('Matric number must be 15 characters');
+      setsubmit(false);
+      setTimeout(() => {
+        setError('');
+      }, 3000);
     } else if (data.img === '') {
       setError('Please upload a passport');
+      setsubmit(false);
+      imeout(() => {
+        setError('');
+      }, 3000);
     } else {
       const res = await fetch('/api/candidates', {
         method: 'POST',
@@ -75,9 +82,12 @@ export default function Candidates() {
       const d = await res.json();
       if (res.status === 200) {
         setregistered(true);
-        // router.push('/dashboard');
       } else {
         setError(d.message);
+        setsubmit(false);
+        imeout(() => {
+          setError('');
+        }, 3000);
       }
     }
   };
@@ -92,7 +102,9 @@ export default function Candidates() {
       </Head>
       <WidgetLoader />
       <main className={styles.main}>
-        <div className={styles.overlay}></div>
+        <div
+          className={registered ? styles.overlay_normal : styles.overlay}
+        ></div>
         <div className={styles.can_cont}>
           <Card>
             <section>
@@ -101,10 +113,14 @@ export default function Candidates() {
               >
                 <div className={styles.content_hero}>
                   <Image
-                    className={styles.content_hero_img}
+                    className={
+                      registered
+                        ? styles.content_hero_img_reg
+                        : styles.content_hero_img
+                    }
                     src={Logo}
                     width={100}
-                    height={70}
+                    height={registered ? 60 : 70}
                     alt="Sauce"
                   />
                   <h1 className={styles.heading}> AWARD NOMINATION</h1>
@@ -184,22 +200,26 @@ export default function Candidates() {
                               Nickname
                             </label>
                           </div>
-                          <div className={styles.level}>
+                          <div className={styles.faculty}>
                             <select
-                              className={styles.level_select}
-                              name="level"
-                              id="level"
-                              value={level}
-                              onChange={(e) => setlevel(e.target.value)}
+                              className={styles.faculty_select}
+                              name="faculty"
+                              id="faculty"
+                              value={faculty}
+                              onChange={(e) => setfaculty(e.target.value)}
                             >
                               <option value="" disabled>
-                                Level
+                                Faculty
                               </option>
-                              <option value="100">100</option>
-                              <option value="200">200</option>
-                              <option value="300">300</option>
-                              <option value="400">400</option>
-                              <option value="500">500</option>
+                              <option value="sict">SICT</option>
+                              <option value="saat">SAAT</option>
+                              <option value="semt">SEMT</option>
+                              <option value="sls">SLS</option>
+                              <option value="seet">SEET</option>
+                              <option value="sps">SPS</option>
+                              <option value="set">SET</option>
+                              <option value="sipet">SIPET</option>
+                              <option value="sste">SSTE</option>
                             </select>
                           </div>
                         </div>
@@ -238,20 +258,20 @@ export default function Candidates() {
                               Best photographer of the year
                             </option>
                             <option value="Most Social">Most Social</option>
-                            <option value="Face of 100level">
-                              Face of 100Level
+                            <option value="Face of 100faculty">
+                              Face of 100faculty
                             </option>
-                            <option value="Face of 200level">
-                              Face of 200Level
+                            <option value="Face of 200faculty">
+                              Face of 200faculty
                             </option>
-                            <option value="Face of 300level">
-                              Face of 300Level
+                            <option value="Face of 300faculty">
+                              Face of 300faculty
                             </option>
-                            <option value="Face of 400level">
-                              Face of 400Level
+                            <option value="Face of 400faculty">
+                              Face of 400faculty
                             </option>
-                            <option value="Face of 500level">
-                              Face of 500Level
+                            <option value="Face of 500faculty">
+                              Face of 500faculty
                             </option>
                             <option value="Slim shady">Slim shady</option>
                             <option value="Mr ebony">Mr ebony</option>
@@ -297,8 +317,12 @@ export default function Candidates() {
                           </select>
                         </div>
 
-                        <button type="submit" className={styles.btn}>
-                          Register
+                        <button
+                          type="submit"
+                          className={!submit ? styles.btn : styles.btn_click}
+                          onClick={() => setsubmit(true)}
+                        >
+                          {!submit ? 'Register' : 'Loading...'}
                         </button>
                       </form>
                     </section>

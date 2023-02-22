@@ -9,11 +9,17 @@
   position: relative;
 }
 
-.overlay {
+.overlay,
+.overlay_normal {
   width: 100vw;
-  height: calc(100vh + 80px);
   z-index: 0;
   background-color: rgba(0, 0, 0, 0.5);
+}
+.overlay {
+  height: calc(100vh + 250px);
+}
+.overlay_normal {
+  height: 100vh;
 }
 .can_cont {
   width: 100%;
@@ -53,8 +59,13 @@
   justify-content: center;
   align-items: center;
 }
-.content_hero_img {
+.content_hero_img,
+.content_hero_img_reg {
   align-self: baseline;
+}
+
+.content_hero_img_reg {
+  margin-left: -30px;
 }
 .heading {
   font-size: 2.5rem;
@@ -155,7 +166,7 @@
   align-items: center;
   margin: 1rem 0;
 }
-.level,
+.faculty,
 .position {
   margin: 0;
   margin-left: 1rem;
@@ -165,7 +176,7 @@
   font-weight: bold;
   color: #2196f3;
 }
-.level *,
+.faculty *,
 .position * {
   border-radius: 0.3rem;
   width: 100%;
@@ -177,7 +188,7 @@
   line-height: 1.5;
   border: 0.0625rem solid green;
 }
-.level *:focus,
+.faculty *:focus,
 .position_select:focus {
   border: none;
   outline: 0.125rem solid green;
@@ -194,6 +205,7 @@
 }
 
 /* Submit Button */
+.btn_click,
 .btn {
   --color: #008000;
   font-family: inherit;
@@ -214,6 +226,12 @@
   background-color: #fff;
 }
 
+.btn_click {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.btn_click:before,
 .btn:before {
   content: '';
   position: absolute;
@@ -224,22 +242,26 @@
   border-radius: 50%;
 }
 
+.btn_click:hover,
 .btn:hover {
   color: #fff;
   font-weight: bold;
 }
 
+.btn_click:before,
 .btn:before {
   top: 100%;
   left: 100%;
   transition: all 0.7s;
 }
 
+.btn_click:hover:before,
 .btn:hover:before {
   top: -30px;
   left: -30px;
 }
 
+.btn_click:active:before,
 .btn:active:before {
   background: #3a0ca3;
   transition: background 0s;

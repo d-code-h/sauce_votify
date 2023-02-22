@@ -8,3 +8,9 @@
 .upload {
   margin-top: 1rem;
 }
+
+.not_active {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
