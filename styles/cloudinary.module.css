@@ -1,0 +1,10 @@
+.upload_icon,
+.upload {
+  cursor: pointer;
+}
+.upload_icon {
+  font-size: 1.5rem;
+}
+.upload {
+  margin-top: 1rem;
+}

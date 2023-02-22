@@ -5,13 +5,6 @@
 .main {
   background-position: center;
   background-size: cover;
-}
-
-.access {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(
     to left bottom,
     rgb(255, 0, 0),
@@ -24,16 +17,37 @@
   );
 }
 
-.content {
+.can_cont {
+  width: 100%;
+}
+
+.content,
+.content_center {
   background-color: rgba(255, 255, 255, 0.8);
-  width: 90%;
-  height: 100%;
-  text-align: center;
+  width: 100%;
   padding: 2rem;
   border-radius: 1rem;
 }
+.content_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+}
+.after_reg {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.emoji {
+  font-size: 2rem;
+  color: red;
+}
 .heading {
-  font-size: 4rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   text-align: center;
   background: conic-gradient(
@@ -50,29 +64,33 @@
   -webkit-background-clip: text;
   background-clip: text;
 }
-.input_group {
+.input_group,
+.input_group_first {
   position: relative;
 }
-
-.input,
-.input_active {
-  width: 100%;
-  letter-spacing: 0.2rem;
-  padding: 1rem;
-  font-size: 1rem;
-  color: black;
-  background-color: #fff;
+.input_group_first {
+  margin-top: 2rem;
 }
+
+.form > .input_group:nth-child(1) {
+  margin: 1rem 0;
+}
+
 .input {
   border: none;
   border-bottom: 2px solid #008000;
   background: none;
+  padding: 1rem;
+  font-size: 1rem;
+  color: black;
+  width: 100%;
+  letter-spacing: 0.2rem;
 }
-
-.input_active {
+.input:focus {
   outline: none;
   --angle: 0deg;
   border: 3px solid;
+
   border-image: conic-gradient(
       from var(--angle),
       red,
@@ -89,6 +107,9 @@
 .full__width {
   width: 100%;
 }
+/* .user_label,
+.user_label_focus */
+
 .label {
   position: absolute;
   left: 15px;
@@ -110,20 +131,56 @@
   inherits: false;
 }
 
-.label {
+.label_active {
   transform: translateY(235%) scale(1);
   background-color: #e8e8e8;
   font-weight: bold;
   padding: 0 0.2em;
   color: #2196f3;
 }
-.not_label {
-  position: absolute;
-  left: 15px;
+
+.content_inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+.level,
+.position {
+  margin: 0;
+  margin-left: 1rem;
+  padding: 0;
+  width: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2196f3;
+}
+.level *,
+.position * {
+  border-radius: 0.3rem;
+  width: 100%;
+  background-color: transparent;
   color: #000;
-  pointer-events: none;
-  transform: translateY(1rem);
-  transition: 350ms;
+  height: 3rem;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  line-height: 1.5;
+  border: 0.0625rem solid green;
+}
+.level *:focus,
+.position_select:focus {
+  border: none;
+  outline: 0.125rem solid green;
+}
+
+.position {
+  width: 100%;
+  margin: 1rem auto;
+  height: 2.5rem;
+}
+.position_select {
+  padding: 0.5rem;
+  font-size: 1rem;
 }
 
 /* Submit Button */
@@ -131,7 +188,7 @@
   --color: #008000;
   font-family: inherit;
   display: block;
-  min-width: 8em;
+  width: 8em;
   height: 2.6em;
   line-height: 2.5em;
   margin: 30px auto 20px auto;
@@ -145,9 +202,6 @@
   font-weight: 500;
   color: var(--color);
   background-color: #fff;
-}
-.btn:focus {
-  outline: 1px solid var(--color);
 }
 
 .btn:before {
@@ -182,16 +236,16 @@
 }
 
 .error {
+  text-align: center;
+  margin: auto;
   color: rgb(255, 0, 0);
-  margin-top: 0.5rem;
+  margin-top: 2rem;
+  border: 0.0625rem solid #ccc;
+  padding: 0.5rem;
   font-weight: bold;
 }
 @media screen and (min-width: 768px) {
-  .full__width {
-    max-width: 60%;
-    margin: auto;
-  }
-  .content {
+  .can_con {
     max-width: 80%;
   }
 }
