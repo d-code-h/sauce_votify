@@ -9,33 +9,33 @@ export default async function handler(req, res) {
     req.body.matric !== ''
   ) {
     let matric = req.body.matric.toUpperCase().trim();
-    const patt = /^[0-9]{4}\/(1|2)\/[0-9]{5}(AR|AE)$/;
+    const patt = /^(2014|2015|2016|2017|2018)\/(1|2)\/[0-9]{5}[A-Z]{2}$/;
     if (patt.test(matric)) {
-      console.log(matric);
       (async () => {
         try {
           await client.connect();
           const db = client.db(process.env.DBNAME);
 
           const voter = await db.collection('voters').findOne({ user: matric });
-          if (voter !== null && matric !== '2018/1/69686AE') {
-            console.log('Seen');
-            console.log('I can not see this');
-
+          if (
+            voter !== null &&
+            matric !== '2016/1/59660EM' &&
+            matric !== '2016/1/58905AE'
+          ) {
             return res
               .status(400)
               .json({ message: 'User already voted. Thank you!' });
           } else {
-            if (matric === '2018/1/69686AE' && voter !== null) {
-              console.log('I can see this');
+            if (
+              (matric === '2016/1/59660EM' || matric === '2016/1/58905AE') &&
+              voter !== null
+            ) {
               return res.status(200).json({ matric: matric, post: 'Admin' });
             }
-            // if (voter !== null)
             return res.status(200).json({ matric: matric });
           }
         } catch (err) {
           console.log(err);
-          console.log('Seen');
           return res
             .status(400)
             .json({ message: 'Something went wrong! Please try again.' });
