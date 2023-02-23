@@ -25,6 +25,7 @@
   align-items: center;
   background-image: url('../public/program.jpg');
   background-position: center;
+  background-size: cover;
 }
 
 .content {
@@ -40,12 +41,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 50px;
 }
 .content_hero_img {
   align-self: baseline;
 }
 .heading {
-  font-size: 4rem;
+  align-self: end;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   text-align: center;
   background: conic-gradient(
