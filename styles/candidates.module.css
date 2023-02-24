@@ -8,7 +8,7 @@
   background-image: url('../public/program.jpg');
   position: relative;
   /* height: 100%; */
-  height: calc(100vh + 250px);
+  height: calc(100vh + 350px);
 }
 
 .overlay,
@@ -282,6 +282,21 @@
   border: 0.0625rem solid #ccc;
   padding: 0.5rem;
   font-weight: bold;
+}
+
+.sponsored {
+  margin-top: 3rem;
+}
+.sponsored h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.sponsor {
+  background-color: #000;
+}
+.spons {
+  margin: 0 2rem 0 0.8rem;
 }
 @media screen and (min-width: 768px) {
   .can_con {

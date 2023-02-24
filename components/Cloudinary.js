@@ -31,8 +31,8 @@ export default function Cloudinary({ img, setimg }) {
   }, [clicked]);
   return (
     <div
-      className={change ? styles.not_active : ''}
-      onClick={() => setClicked(true)}
+    // className={change ? styles.not_active : ''}
+    // onClick={() => setClicked(true)}
     >
       <Widget
         sources={['local', 'camera', 'dropbox']}

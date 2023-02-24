@@ -5,6 +5,9 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 import Logo from '../public/main-logo-preview.png';
+import Sauce from '../public/logo-preview.png';
+import Brand from '../public/brand.png';
+import Sponsor from '../public/sponsor.png';
 
 import styles from '../styles/candidates.module.css';
 // components
@@ -246,7 +249,7 @@ export default function Candidates() {
                             onChange={(e) => setposition(e.target.value)}
                           >
                             <option value="" disabled>
-                              Position
+                              Category
                             </option>
                             <option value="face of 100">face of 100</option>
                             <option value="face of 200">face of 200</option>
@@ -364,6 +367,32 @@ export default function Candidates() {
                           {!submit ? 'Register' : 'Loading...'}
                         </button>
                       </form>
+
+                      <div className={styles.sponsored}>
+                        <h4>Sponsored By:</h4>
+                        <marquee behavior="" direction="rtll">
+                          <Image
+                            src={Sauce}
+                            width={80}
+                            height={80}
+                            alt="Sauce"
+                          />
+                          <Image
+                            className={styles.spons}
+                            src={Brand}
+                            width={80}
+                            height={80}
+                            alt="Sauce"
+                          />
+                          <Image
+                            className={styles.sponsor}
+                            src={Sponsor}
+                            width={100}
+                            height={100}
+                            alt="Sauce"
+                          />
+                        </marquee>
+                      </div>
                     </section>
                   </div>
                 ) : (

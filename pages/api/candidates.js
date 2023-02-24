@@ -13,8 +13,7 @@ export default async function Candidates(req, res) {
     // Pattern
     const string = /^[a-zA-Z]+$/;
 
-    const matricPattern =
-      /^(2014|2015|2016|2017|2018)\/(1|2)\/[0-9]{5}[A-Z]{2}$/;
+    const matricPattern = /^[0-9]{4}\/(1|2)\/[0-9]{5}[A-Z]{2}$/;
 
     const numPat = /^[0-9]{3}$/;
 

@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     req.body.matric !== ''
   ) {
     let matric = req.body.matric.toUpperCase().trim();
-    const patt = /^(2014|2015|2016|2017|2018)\/(1|2)\/[0-9]{5}[A-Z]{2}$/;
+    const patt = /^[0-9]{4}\/(1|2)\/[0-9]{5}[A-Z]{2}$/;
     if (patt.test(matric)) {
       (async () => {
         try {
