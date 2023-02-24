@@ -1,22 +1,24 @@
 .main,
 .access {
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 .main {
   background-position: center;
   background-size: cover;
   background-image: url('../public/program.jpg');
   position: relative;
+  /* height: 100%; */
+  height: calc(100vh + 250px);
 }
 
 .overlay,
 .overlay_normal {
   width: 100vw;
   z-index: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .overlay {
-  height: 100vh;
+  height: 100%;
 }
 .overlay_normal {
   height: 100vh;
@@ -32,9 +34,10 @@
 .content,
 .content_center {
   background-color: rgba(255, 255, 255, 0.97);
-  width: 80%;
-  margin: auto;
+  width: 90%;
+  margin: 2rem auto;
   padding: 2rem;
+  padding-top: 0;
   border-radius: 1rem;
 }
 .content_center {
@@ -57,12 +60,14 @@
 }
 .content_hero {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
 }
 .content_hero_img,
 .content_hero_img_reg {
-  align-self: baseline;
+  margin-top: -20px;
 }
 
 .content_hero_img_reg {
@@ -71,7 +76,6 @@
 .heading {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  padding-right: 20px;
   text-align: center;
   background: conic-gradient(
     from var(--angle),
@@ -95,7 +99,8 @@
   margin-top: 2rem;
 }
 
-.form > .input_group:nth-child(1) {
+.form > .input_group:nth-child(1),
+.form > .input_group:nth-child(3) {
   margin: 1rem 0;
 }
 
