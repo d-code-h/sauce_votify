@@ -69,7 +69,7 @@ export default function Candidates() {
     } else if (data.img === '') {
       setError('Please upload a passport');
       setsubmit(false);
-      imeout(() => {
+      setTimeout(() => {
         setError('');
       }, 3000);
     } else {
@@ -103,7 +103,7 @@ export default function Candidates() {
         <link rel="icon" href="/main-logo-preview.png" />
       </Head>
       <WidgetLoader />
-      <main className={styles.main}>
+      <main className={!registered ? styles.main : styles.main_voted}>
         <div
           className={registered ? styles.overlay_normal : styles.overlay}
         ></div>
@@ -122,7 +122,7 @@ export default function Candidates() {
                     }
                     src={Logo}
                     width={160}
-                    height={registered ? 150 : 150}
+                    height={150}
                     alt="Sauce"
                   />
                   <h1 className={styles.heading}> AWARD NOMINATION</h1>
@@ -370,7 +370,7 @@ export default function Candidates() {
 
                       <div className={styles.sponsored}>
                         <h4>Sponsored By:</h4>
-                        <marquee behavior="" direction="rtll">
+                        <marquee behavior="" direction="">
                           <Image
                             src={Sauce}
                             width={80}

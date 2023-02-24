@@ -2,7 +2,8 @@
 .access {
   /* min-height: 100vh; */
 }
-.main {
+.main,
+.main_voted {
   background-position: center;
   background-size: cover;
   background-image: url('../public/program.jpg');
@@ -10,10 +11,12 @@
   /* height: 100%; */
   height: calc(100vh + 400px);
 }
-
+.main_voted {
+  height: 100%;
+}
 .overlay,
 .overlay_normal {
-  width: 100vw;
+  width: 100%;
   z-index: 0;
   background-color: rgba(0, 0, 0, 0.3);
 }

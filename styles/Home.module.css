@@ -33,21 +33,24 @@
   z-index: 10;
   width: 90%;
   height: 100%;
-  text-align: center;
+  /* text-align: center; */
   padding: 2rem;
   border-radius: 1rem;
 }
 .content_hero {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 50px;
+  /* margin-right: 50px; */
+  margin-bottom: 1rem;
 }
 .content_hero_img {
-  align-self: baseline;
+  /* align-self: baseline; */
 }
 .heading {
-  align-self: end;
+  /* align-self: end; */
+  text-transform: uppercase;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -201,6 +204,22 @@
   margin-top: 0.5rem;
   font-weight: bold;
 }
+
+.sponsored {
+  margin-top: 3rem;
+}
+.sponsored h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.sponsor {
+  background-color: #000;
+}
+.spons {
+  margin: 0 2rem 0 0.8rem;
+}
+
 @media screen and (min-width: 768px) {
   .full__width {
     max-width: 60%;
