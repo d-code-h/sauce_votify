@@ -29,10 +29,17 @@ export default function Cloudinary({ img, setimg }) {
   useEffect(() => {
     clicked ? setChange(true) : setChange(false);
   }, [clicked]);
+
+  const handleClicked = () => {
+    setClicked(true);
+    setTimeout(() => {
+      setClicked(false);
+    }, 3000);
+  };
   return (
     <div
-    // className={change ? styles.not_active : ''}
-    // onClick={() => setClicked(true)}
+      className={change ? styles.not_active : ''}
+      onClick={() => handleClicked()}
     >
       <Widget
         sources={['local', 'camera', 'dropbox']}
