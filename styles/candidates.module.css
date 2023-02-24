@@ -9,7 +9,7 @@
   background-image: url('../public/program.jpg');
   position: relative;
   /* height: 100%; */
-  height: calc(100vh + 400px);
+  height: calc(100vh + 450px);
 }
 .main_voted {
   height: 100%;
@@ -302,6 +302,10 @@
   margin: 0 2rem 0 0.8rem;
 }
 @media screen and (min-width: 768px) {
+  .content,
+  .content_center {
+    width: 50%;
+  }
   .can_con {
     max-width: 80%;
   }
