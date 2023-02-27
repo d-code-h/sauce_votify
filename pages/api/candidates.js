@@ -51,8 +51,6 @@ export default async function Candidates(req, res) {
           return res.status(400).json({
             message: 'Server trying to rest, Please try again soon.',
           });
-        } finally {
-          db.close();
         }
       })();
     }

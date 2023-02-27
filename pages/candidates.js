@@ -128,7 +128,13 @@ export default function Candidates() {
                   <h1 className={styles.heading}> AWARD NOMINATION</h1>
                 </div>
 
-                {!registered ? (
+                {registered ? (
+                  <div className={styles.after_reg}>
+                    <p>Nomination Successful!</p>
+                    <p>Thank you!!!</p>
+                    <p className={styles.emoji}>&#128151;</p>
+                  </div>
+                ) : (
                   <div className={styles.before_reg}>
                     <Cloudinary img={img} setimg={setimg} />
                     <section className={styles.full__width}>
@@ -394,12 +400,6 @@ export default function Candidates() {
                         </marquee>
                       </div>
                     </section>
-                  </div>
-                ) : (
-                  <div className={styles.after_reg}>
-                    <p>Nomination Successful!</p>
-                    <p>Thank you!!!</p>
-                    <p className={styles.emoji}>&#128151;</p>
                   </div>
                 )}
               </div>
