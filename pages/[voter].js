@@ -279,9 +279,7 @@ export default function Voters() {
                             {candidate.fname} {candidate.lname}
                           </h2>
                           <h4 className={styles.nick}>{candidate.nick}</h4>
-                          <h4 className={styles.level}>
-                            {candidate.level} Level
-                          </h4>
+                          <h4 className={styles.level}>{candidate.faculty}</h4>
                         </div>
                         {!tosubmit ? (
                           <button
