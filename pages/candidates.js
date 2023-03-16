@@ -304,9 +304,7 @@ export default function Candidates() {
                               Entrepreneur of the year{' '}
                             </option>
                             <option value="best clique">best clique</option>
-                            <option value="sportswoman of the year">
-                              sportswoman of the year{' '}
-                            </option>
+
                             <option value="Best couple">Best couple </option>
                             <option value="Hourglass">Hourglass</option>
                             <option value="mr ebony">mr ebony </option>

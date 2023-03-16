@@ -208,9 +208,7 @@ export default function Voters() {
                       ENTREPRENEUR OF THE YEAR{' '}
                     </option>
                     <option value="best clique">BEST CLIQUE</option>
-                    <option value="sportswoman of the year">
-                      SPORTSWOMAN OF THE YEAR{' '}
-                    </option>
+
                     <option value="Best couple">BEST COUPLE </option>
                     <option value="Hourglass">HOURGLASS</option>
                     <option value="mr ebony">MR EBONY </option>
