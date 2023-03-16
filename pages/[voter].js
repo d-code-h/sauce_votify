@@ -197,12 +197,10 @@ export default function Voters() {
                     <option value="Best wardrobe female">
                       BEST WARDROBE FEMALE{' '}
                     </option>
-                    <option value="Model of the year male">
-                      MODEL OF THE YEAR MALE{' '}
+                    <option value="Model of the Year">
+                      MODEL OF THE YEAR{' '}
                     </option>
-                    <option value="Model of the Year female">
-                      MODEL OF THE YEAR FEMALE{' '}
-                    </option>
+
                     <option value="Photographer of the year">
                       PHOTOGRAPHER OF THE YEAR
                     </option>
@@ -257,6 +255,9 @@ export default function Voters() {
                     <option value="Most expensive">MOST EXPENSIVE </option>
                     <option value="Techpreneur of the Year">
                       TECHPRENEUR OF THE YEAR
+                    </option>
+                    <option value="Business Icon of the Year">
+                      BUSINESS ICON OF THE YEAR
                     </option>
                   </select>
                 </div>

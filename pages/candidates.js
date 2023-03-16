@@ -293,12 +293,10 @@ export default function Candidates() {
                             <option value="Best wardrobe female">
                               Best wardrobe female{' '}
                             </option>
-                            <option value="Model of the year male">
-                              Model of the year male{' '}
+                            <option value="Model of the Year">
+                              Model of the year{' '}
                             </option>
-                            <option value="Model of the Year female">
-                              Model of the Year female{' '}
-                            </option>
+
                             <option value="Photographer of the year">
                               Photographer of the year
                             </option>
@@ -361,6 +359,9 @@ export default function Candidates() {
                             </option>
                             <option value="Techpreneur of the Year">
                               Techpreneur of the Year
+                            </option>
+                            <option value="Business Icon of the Year">
+                              Business Icon of the Year
                             </option>
                           </select>
                         </div>
