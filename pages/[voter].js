@@ -213,7 +213,7 @@ export default function Voters() {
                     <option value="Hourglass">HOURGLASS</option>
                     <option value="mr ebony">MR EBONY </option>
                     <option value="Miss ebony">MISS EBONY </option>
-                    <option value="most social">MOST SOCIAl </option>
+                    <option value="most social">MOST SOCIAL </option>
                     <option value="Comedian of the year">
                       COMEDIAN OF THE YEAR{' '}
                     </option>
@@ -239,8 +239,7 @@ export default function Voters() {
                       FACULTY PRESIDENT OF YEAR (19/20){' '}
                     </option>
                     <option value="Most political">MOST POLITICAL </option>
-                    <option value="Mr sauce">MR SAUCE </option>
-                    <option value="Miss Sauce">MISS SAUCE </option>
+
                     <option value="Scholar of the year">
                       SCHOLAR OF THE YEAR{' '}
                     </option>

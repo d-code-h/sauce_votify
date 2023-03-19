@@ -341,8 +341,7 @@ export default function Candidates() {
                             <option value="Most political">
                               Most political{' '}
                             </option>
-                            <option value="Mr sauce">Mr sauce </option>
-                            <option value="Miss Sauce">Miss Sauce </option>
+
                             <option value="Scholar of the year">
                               Scholar of the year{' '}
                             </option>
