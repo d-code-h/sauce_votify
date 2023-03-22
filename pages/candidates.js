@@ -305,7 +305,6 @@ export default function Candidates() {
                             </option>
                             <option value="best clique">best clique</option>
 
-                            <option value="Best couple">Best couple </option>
                             <option value="Hourglass">Hourglass</option>
                             <option value="mr ebony">mr ebony </option>
                             <option value="Miss ebony">Miss ebony </option>

@@ -209,7 +209,6 @@ export default function Voters() {
                     </option>
                     <option value="best clique">BEST CLIQUE</option>
 
-                    <option value="Best couple">BEST COUPLE </option>
                     <option value="Hourglass">HOURGLASS</option>
                     <option value="mr ebony">MR EBONY </option>
                     <option value="Miss ebony">MISS EBONY </option>
