@@ -11,7 +11,7 @@ import Sponsor from '../public/sponsor.png';
 
 import styles from '../styles/candidates.module.css';
 // components
-import Cloudinary from '../components/Cloudinary';
+import Cloudinary from '../../components/Cloudinary';
 
 export default function Candidates() {
   const router = useRouter();
