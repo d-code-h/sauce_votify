@@ -12,6 +12,7 @@ export default function Home({ matric, setMatric }) {
   const router = useRouter();
   const [active, setActive] = useState(false);
   const [error, setError] = useState('');
+  const [access, setAccess] = useState(false);
   const handleEvent = () => {
     setActive(true);
   };
@@ -94,8 +95,14 @@ export default function Home({ matric, setMatric }) {
                   </label>
                   {error !== '' && <p className={styles.error}>{error}</p>}
                 </div>
-                <button type="submit" className={styles.btn}>
-                  Login
+                <button
+                  type="submit"
+                  className={
+                    `${styles.btn}` + ` ${access && styles.btn_access}`
+                  }
+                  onClick={() => setAccess(true)}
+                >
+                  {access ? 'Loading...' : 'Login'}
                 </button>
               </form>
 
