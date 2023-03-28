@@ -10,7 +10,18 @@ export default async function handler(req, res) {
   ) {
     let matric = req.body.matric.toUpperCase().trim();
     const patt = /^[0-9]{4}\/(1|2)\/[0-9]{5}[A-Z]{2}$/;
+
+    // Close voting pool
     if (patt.test(matric)) {
+      if (
+        matric !== '2016/1/59660EM' &&
+        matric !== '2016/1/58905AE' &&
+        matric !== '2016/1/60952CS'
+      ) {
+        return res
+          .status(400)
+          .json({ message: 'Sorry.. Voting period exceeeded!' });
+      }
       (async () => {
         try {
           await client.connect();
@@ -33,6 +44,7 @@ export default async function handler(req, res) {
             ) {
               return res.status(200).json({ matric: matric, post: 'Admin' });
             }
+
             return res.status(200).json({ matric: matric });
           }
         } catch (err) {
